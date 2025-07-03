@@ -382,6 +382,23 @@
       </div>
     </div>
 
+    <!-- Academic Profile Card -->
+    <div class="card fade-in" style="margin-bottom: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #43cea2, #185a9d);">
+          <i class="fas fa-id-badge"></i>
+        </div>
+        <h3>Your Academic Profile</h3>
+      </div>
+      <div style="padding: 10px 0 0 0;">
+        <strong>Registration Number:</strong> {{ user.email.split('@')[0] }}<br>
+        <strong>Name:</strong> {{ user.name }}<br>
+        <strong>Department:</strong> {{ user.department }}<br>
+        <strong>Year of Graduation:</strong> {{ user.year_of_graduation }}<br>
+        <strong>Academic Record:</strong> {{ user.academic_record }}
+      </div>
+    </div>
+
     <div class="stats-grid fade-in">
       <div class="stat-card">
         <div class="stat-number">127</div>
@@ -455,6 +472,149 @@
         </div>
         <p class="quote">"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."</p>
       </div>
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="card fade-in" style="margin-top: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h3>Your Achievements</h3>
+      </div>
+      <ul class="connections-list">
+        <li>
+          <div class="connection-avatar"><i class="fas fa-medal"></i></div>
+          <div class="connection-info">
+            <h4>Dean's List</h4>
+            <p>Recognized for outstanding academic performance in 2022.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-lightbulb"></i></div>
+          <div class="connection-info">
+            <h4>Hackathon Winner</h4>
+            <p>Won 1st place in the National Coding Hackathon 2023.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-certificate"></i></div>
+          <div class="connection-info">
+            <h4>Certified AWS Cloud Practitioner</h4>
+            <p>Completed AWS certification in 2022.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <div class="card fade-in" style="margin-top: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3>Upcoming Events</h3>
+      </div>
+      <ul class="connections-list">
+        <li>
+          <div class="connection-avatar"><i class="fas fa-users"></i></div>
+          <div class="connection-info">
+            <h4>Alumni Meetup 2024</h4>
+            <p>March 15, 2024 - Join us for networking and fun!</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-briefcase"></i></div>
+          <div class="connection-info">
+            <h4>Career Fair</h4>
+            <p>April 10, 2024 - Meet top recruiters and explore job opportunities.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div class="connection-info">
+            <h4>Webinar: AI in Industry</h4>
+            <p>April 25, 2024 - Learn from industry experts about AI trends.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Alumni News Section -->
+    <div class="card fade-in" style="margin-top: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+          <i class="fas fa-newspaper"></i>
+        </div>
+        <h3>Alumni News</h3>
+      </div>
+      <ul class="connections-list">
+        <li>
+          <div class="connection-avatar"><i class="fas fa-user-graduate"></i></div>
+          <div class="connection-info">
+            <h4>Alumnus Receives National Award</h4>
+            <p>Our alumnus, Priya Sharma, was honored with the National Young Data Scientist Award 2024.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-rocket"></i></div>
+          <div class="connection-info">
+            <h4>Startup Launch</h4>
+            <p>John Smith (AI Engineer) launched a new AI-powered platform for education.</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-handshake"></i></div>
+          <div class="connection-info">
+            <h4>Alumni-Industry Collaboration</h4>
+            <p>Alumni from the 2021 batch have partnered with Google for a new research project.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Alumni Testimonials Section -->
+    <div class="card fade-in" style="margin-top: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #43cea2, #185a9d);">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <h3>Alumni Testimonials</h3>
+      </div>
+      <div class="quote" style="margin-bottom: 15px;">
+        "SRCASX gave me the skills and confidence to succeed in my career!"<br>
+        <span style="font-size: 0.9em; color: #888;">— 5@alumni.edu</span>
+      </div>
+      <div class="quote">
+        "The alumni network helped me land my dream job."<br>
+        <span style="font-size: 0.9em; color: #888;">— 12@alumni.edu</span>
+      </div>
+    </div>
+
+    <!-- Message Board Section -->
+    <div class="card fade-in" style="margin-top: 30px;">
+      <div class="card-header">
+        <div class="card-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Message Board</h3>
+      </div>
+      <ul class="connections-list">
+        <li>
+          <div class="connection-avatar"><i class="fas fa-user"></i></div>
+          <div class="connection-info">
+            <h4>1@alumni.edu</h4>
+            <p>Looking forward to the next alumni meetup!</p>
+          </div>
+        </li>
+        <li>
+          <div class="connection-avatar"><i class="fas fa-user"></i></div>
+          <div class="connection-info">
+            <h4>7@alumni.edu</h4>
+            <p>Congrats to everyone who graduated this year!</p>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <div class="action-buttons fade-in">
