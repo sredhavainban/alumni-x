@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | AlumniX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+      font-family: 'Inter', sans-serif; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container { 
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      color: #333; 
+      padding: 40px; 
+      border-radius: 20px; 
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+      max-width: 450px; 
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo i {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    h2 { 
+      text-align: center; 
+      margin-bottom: 30px; 
+      color: #333;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #667eea;
+      font-size: 1.1rem;
+    }
+
+    input { 
+      width: 100%; 
+      padding: 15px 15px 15px 45px; 
+      border-radius: 12px; 
+      border: 2px solid #e1e8ff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      background: white;
+    }
+
+    button { 
+      width: 100%; 
+      padding: 15px; 
+      margin: 20px 0; 
+      border-radius: 12px; 
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white; 
+      font-weight: 600;
+      font-size: 1rem;
+      border: none; 
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    }
+
+    button:hover { 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+    }
+
+    .error-message {
+      background: #fee;
+      color: #c33;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #c33;
+      font-size: 0.9rem;
+    }
+
+    .info-box {
+      background: #f8f9ff;
+      border: 1px solid #e1e8ff;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .info-box strong {
+      color: #667eea;
+    }
+
+    .pre-filled-notice {
+      background: #e8f5e8;
+      color: #2d5a2d;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 4px solid #2d5a2d;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container fade-in">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      <h2>AlumniX Login</h2>
+    </div>
+
+    {% if error %}
+    <div class="error-message">
+      <i class="fas fa-exclamation-triangle"></i>
+      {{ error }}
+    </div>
+    {% endif %}
+
+    <div id="pre-filled-notice" class="pre-filled-notice" style="display: none;">
+      <i class="fas fa-check-circle"></i>
+      Registration number pre-filled from selection
+    </div>
+
+    <form method="POST">
+      <div class="form-group">
+        <i class="fas fa-id-card"></i>
+        <input name="reg_number" id="reg_number" type="text" placeholder="Enter Registration Number (e.g., 23129001)" required>
+      </div>
+      <button type="submit">
+        <i class="fas fa-sign-in-alt"></i>
+        Login to Dashboard
+      </button>
+    </form>
+
+    <div class="info-box">
+      <strong>Available Registration Numbers:</strong><br>
+      23129001 - 23129020 (Use any of these numbers to login)
+    </div>
+  </div>
+
+  <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Check if registration number is passed in URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const regNumber = getUrlParameter('reg_number');
+      if (regNumber) {
+        const input = document.getElementById('reg_number');
+        const notice = document.getElementById('pre-filled-notice');
+        
+        input.value = regNumber;
+        notice.style.display = 'flex';
+        
+        // Highlight the input field
+        input.style.borderColor = '#2d5a2d';
+        input.style.boxShadow = '0 0 0 3px rgba(45, 90, 45, 0.1)';
+        
+        // Focus on the input
+        input.focus();
+      }
+    });
+  </script>
+</body>
+</html>
